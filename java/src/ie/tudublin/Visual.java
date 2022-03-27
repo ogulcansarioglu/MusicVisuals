@@ -95,8 +95,7 @@ public void draw() {
 
 
 
- 
-  stroke(50);
+
   beginShape(TRIANGLE_STRIP);
 
 
