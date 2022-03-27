@@ -18,6 +18,7 @@ import processing.opengl.PShader;
 
 
 
+
 public class Visual extends PApplet {
 
 
@@ -26,9 +27,11 @@ public class Visual extends PApplet {
    */
 private static final String LUDENS_MP3 = "C:/Users/Olci/Desktop/OLCI/MusicVisuals/java/src/ie/tudublin/Ludens.mp3";
 int cols, rows;
-int scale = 10;
-int w = 2000;
-int h = 1600;
+int scale = 20;
+int w = 4000;
+int h = 2800;
+
+
 
 Minim minim;
 
@@ -42,6 +45,8 @@ PShape vertex1, vertex2;
 float flying = 0;
 
 float[][] terrain;
+
+
 
 
 public void settings() {
@@ -61,7 +66,7 @@ public void setup(){
     bd = new BeatDetect(ap.bufferSize(), ap.sampleRate());
     ap.play();
     ab = ap.mix;
-    bd.detect(ap.mix);
+  
 
 
 }
@@ -69,23 +74,25 @@ public void setup(){
 
 public void draw() {
 
+  bd.detect(ap.mix);
   flying -= 0.05;
   float yoff = flying;
-
-  if (bd.isSnare()) {
-   System.out.print("obj");
-  } else {
-    System.out.print("1");
-  }
+  float xoff;
+ 
+  
 
 
   for (int y = 0; y < rows; y++) {
-    float xoff = 0;
+   
+    xoff = 0;
     for (int x = 0; x < cols; x++) {
       terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 100);
   
       xoff += 0.1;
-      noStroke();
+      if (bd.isKick()) {
+        yoff -= 5;
+      } 
+   
 	 
     }
     yoff += 0.1;
