@@ -1,5 +1,3 @@
-
-
 package ie.tudublin;
 
 import java.io.Console;
@@ -13,8 +11,6 @@ import ddf.minim.analysis.FFT;
 import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PShape;
-import processing.opengl.PShader;
-
 
 
 
@@ -30,6 +26,8 @@ int cols, rows;
 int scale = 20;
 int w = 4000;
 int h = 2800;
+
+FFT fft;
 
 
 
@@ -63,13 +61,11 @@ public void setup(){
    
     minim = new Minim(this);
     ap = minim.loadFile(LUDENS_MP3);
+    fft = new FFT(ap.bufferSize(), ap.sampleRate());
     bd = new BeatDetect(ap.bufferSize(), ap.sampleRate());
     ap.play();
     ab = ap.mix;
-  
-
-
-}
+  }
 
 
 public void draw() {
@@ -79,15 +75,27 @@ public void draw() {
   float yoff = flying;
   float xoff;
  
-  
+  fft.forward(ap.mix);
+
+
+    for (int i = 0; i < fft.specSize(); i++) {
+    int tempBand = (int) fft.getBand(i);
+    line(i, height, i, height - tempBand);
+   
+    // better look, but cut off in high frequencies
+    //rect(i * 4, height, 4, -tempBand);
+  }
 
 
   for (int y = 0; y < rows; y++) {
+
+    
    
     xoff = 0;
     for (int x = 0; x < cols; x++) {
-      terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 100);
-  
+      terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 200);
+      int tempBand = (int) fft.getBand(x);
+      line(x, height, x, height - tempBand);
       xoff += 0.1;
       if (bd.isKick()) {
         yoff -= 5;
