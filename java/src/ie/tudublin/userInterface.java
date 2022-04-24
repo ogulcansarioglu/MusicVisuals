@@ -5,18 +5,40 @@ import java.awt.event.*;
 
 public class userInterface implements ActionListener {
     private static int clicks = 0;
-    private JLabel label = new JLabel("Start!");
+
+    private JLabel qLabel = new JLabel("Press Q for Quantum Mode");
+    private JLabel sLabel = new JLabel("Press S For Solid Mode (Default");
+    private JLabel oLabel = new JLabel("Press D For OneDimensional Mode");
     private JFrame frame = new JFrame();
     private Visual visual = new Visual();
+    JButton buttonStart = new JButton("Start!");
+    JButton buttonExit = new JButton("Exit!");
+
+
+    public JButton getButtonStart() {
+        return this.buttonStart;
+    }
+
+    public void setButtonStart(JButton buttonStart) {
+        this.buttonStart = buttonStart;
+    }
+
+    public JButton getButtonExit() {
+        return this.buttonExit;
+    }
+
+    public void setButtonExit(JButton buttonExit) {
+        this.buttonExit = buttonExit;
+    }
+  
 
     public userInterface() {
 
         // the clickable button
-        JButton buttonStart = new JButton("Start!");
-        JButton buttonExit = new JButton("Exit!");
+       
         buttonStart.addActionListener(this);
         buttonExit.addActionListener(this);
-        clicks = this.clicks;
+
 
         // the panel with the button and text
         JPanel panel = new JPanel();
@@ -24,7 +46,9 @@ public class userInterface implements ActionListener {
         panel.setLayout(new GridLayout(0, 1));
         panel.add(buttonStart);
         panel.add(buttonExit);
-        panel.add(label);
+        panel.add(qLabel);
+        panel.add(sLabel);
+        panel.add(oLabel);
 
         setUpButtonListeners(buttonStart, buttonExit);
 
@@ -60,9 +84,14 @@ public class userInterface implements ActionListener {
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
 
 
-    // create one Frame
+
  
 }
 
