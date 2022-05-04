@@ -13,6 +13,7 @@ public class userInterface implements ActionListener {
     private Visual visual = new Visual();
     JButton buttonStart = new JButton("Start!");
     JButton buttonExit = new JButton("Exit!");
+   
 
 
     public JButton getButtonStart() {
@@ -42,6 +43,7 @@ public class userInterface implements ActionListener {
 
         // the panel with the button and text
         JPanel panel = new JPanel();
+        panel.setBackground(Color.lightGray);
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
         panel.setLayout(new GridLayout(0, 1));
         panel.add(buttonStart);
@@ -55,7 +57,7 @@ public class userInterface implements ActionListener {
         // set up the frame and display it
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("GUI");
+        frame.setTitle("The Pocket Universe Generator");
         frame.pack();
         frame.setVisible(true);
     }

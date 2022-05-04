@@ -65,7 +65,7 @@ float[][] terrain;
 float i = 10.122f;
 
 ArrayList<Circle> circles = new ArrayList<Circle>();
-ArrayList<PVector> places;
+ArrayList<PVector> places; //global variable used both in NewCircle method and logo-circle logic
 PImage img;
 
 
@@ -132,8 +132,6 @@ public void draw() {
   background(0);
 
   
-  rect(height/2, width/2, 100, 100);
-
   //populate circle arrayList
 
   int total = 10;
@@ -153,6 +151,8 @@ public void draw() {
       break;
     } 
   }
+
+  //circle growing logic
 
 
   for (Circle c : circles) {
@@ -202,7 +202,7 @@ public void draw() {
   //Key control for changing between three interdimensial modes
 
   if (keyPressed) {
-    if (key == 'q' || key == 'B') {
+    if (key == 'q' || key == 'Q') {
       mode = 0;
     } else if (key == 's' || key == 'S') {
       mode = 1;
