@@ -44,7 +44,8 @@ into the disturbance in the virtual world's literal physical fabric. Being able 
 Secondly, even though I am not "visulazer" or visual learner and my visual imagination is fairly limited and I prefer writing and music, I was glad that I
 put something that is visually pleasing and also makes sense in the visual context, using the story-telling methods that I use. 
 
-Thirdly, I bring together my java education (JFrame libaries) and processing knowladge together when I am creating this project. 
+Thirdly, I bring together my java education (JFrame libaries) and action listeners with processing knowladge together when I am creating this project which was a great 
+task. 
 
 # Markdown Tutorial
 
