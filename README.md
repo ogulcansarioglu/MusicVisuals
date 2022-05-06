@@ -43,35 +43,235 @@ Thirdly, I self research a lot about java and processing libraries and learnt ho
 
 
 
-# Headings
-## Headings
-#### Headings
-##### Headings
+# Code Snippets
 
-This is code:
+
+I added code snippets from draw() method and userInterface class.
 
 ```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
+public void draw() {
+
+  //float[] spectrum = fft.getSpectrumImaginary();
+  bd.detect(ap.mix);
+  flying -= 0.05;
+  float yoff = flying;
+  float xoff;
+ 
+  fft.forward(ap.mix);
+
+  background(0);
+
+  
+  //populate circle arrayList
+
+  int total = 10;
+  int count = 0;
+  int attempts = 0;
+
+  while (count <  total) {
+    Circle newC = newCircle();
+    if (newC != null) {
+      circles.add(newC);
+      count++;
+    }
+    attempts++;
+    if (attempts > 1000) {
+      noLoop();
+      //println("FINISHED");
+      break;
+    } 
+  }
+
+  //circle growing logic
+
+
+  for (Circle c : circles) {
+    if (c.growing) {
+      if (c.edges()) {
+        c.growing = false;
+      } else {
+        for (Circle other : circles) {
+          if (c != other) {
+            float d = dist(c.x, c.y, other.x, other.y);
+            if (d - 2 < c.r + other.r) {
+              c.growing = false;
+              break;
+            }
+          }
+        }
+      }
+    }
+    c.show(this);
+    c.grow();
+  }
+
+  //populating terrain array and spike effect inserted inside with yoff shifted with beat detection
+
+  for (int y = 0; y < rows; y++) {
+  
+    xoff = 0;
+    for (int x = 0; x < cols; x++) {
+
+      //create terrain values for vertices
+
+      terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 200);
+      int tempBand = (int) fft.getBand(x);
+      line(x, width, x, height - tempBand); //frequency line for Q/D modes
+      xoff += 0.1;
+      //beat detection as to give a spike effect with a kick
+      if (bd.isKick()) {
+        yoff -= 5;  //gives the spike effect
+      } 
+   }
+    yoff += 0.1;
+  }
+
+  //Key control for changing between three interdimensial modes
+
+  if (keyPressed) {
+    if (key == 'q' || key == 'Q') {
+      mode = 0;
+    } else if (key == 's' || key == 'S') {
+      mode = 1;
+    } else if (key == 'd' || key == 'D')
+      mode = 2;
+  }
+
+  //determines the mode/shape
+
+  if(mode == 0) {
+  beginShape(QUANTUM);
+} else if (mode == 1){
+  beginShape(SOLID);
+} else if (mode == 2) {
+  beginShape(WAVE);
+}
+
+  
+  
+  translate(width/2, height/2+50);
+  rotateX(PI/3);
+  translate(-w/2, -h/2);
+  translate(mouseX, mouseY);
+
+ // procedurally creating the landscape
+
+  for (int y = 0; y < rows-1; y++) {
+    
+    for (int x = 0; x < cols; x++) {
+      
+      vertex(x*scale, y*scale, terrain[x][y]);
+      vertex(x*scale, (y+1)*scale, terrain[x][y+1]);
+
+     
+      //the mouse X cordinate changes the color of the landscape
+      fill(color(map(mouseX, 0, width, 10, 50)));
+      stroke(x *2  , y * 2 , 255);
+    }
+}
+
+endShape();
+
 }
 ```
 
-So is this without specifying the language:
+User Interface Class:
 
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
+```Java
+public class userInterface implements ActionListener {
+    private static int clicks = 0;
+
+    private JLabel qLabel = new JLabel("Press Q for Quantum Mode");
+    private JLabel sLabel = new JLabel("Press S For Solid Mode (Default");
+    private JLabel oLabel = new JLabel("Press D For OneDimensional Mode");
+    private JFrame frame = new JFrame();
+    private Visual visual = new Visual();
+    JButton buttonStart = new JButton("Start!");
+    JButton buttonExit = new JButton("Exit!");
+   
+
+
+    public JButton getButtonStart() {
+        return this.buttonStart;
+    }
+
+    public void setButtonStart(JButton buttonStart) {
+        this.buttonStart = buttonStart;
+    }
+
+    public JButton getButtonExit() {
+        return this.buttonExit;
+    }
+
+    public void setButtonExit(JButton buttonExit) {
+        this.buttonExit = buttonExit;
+    }
+  
+
+    public userInterface() {
+
+        // the clickable button
+       
+        buttonStart.addActionListener(this);
+        buttonExit.addActionListener(this);
+
+
+        // the panel with the button and text
+        JPanel panel = new JPanel();
+        panel.setBackground(Color.lightGray);
+        panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+        panel.setLayout(new GridLayout(0, 1));
+        panel.add(buttonStart);
+        panel.add(buttonExit);
+        panel.add(qLabel);
+        panel.add(sLabel);
+        panel.add(oLabel);
+
+        setUpButtonListeners(buttonStart, buttonExit);
+
+        // set up the frame and display it
+        frame.add(panel, BorderLayout.CENTER);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("The Pocket Universe Generator");
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    public int getClicks() {
+    return clicks;
+ }
+    public void setUpButtonListeners(JButton start, JButton exit){
+        ActionListener buttonListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                clicks++;
+                
+            }
+        };
+        ActionListener buttonListener2 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               System.exit(0);
+            }
+        };
+
+        start.addActionListener(buttonListener);
+        exit.addActionListener(buttonListener2);
+
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+
+ 
 }
+
 ```
 
 Images showing the main stages and functionalities of the program:
