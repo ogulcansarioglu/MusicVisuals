@@ -96,7 +96,13 @@ public void render()
 
 This is an image using a relative URL:
 
-![An image](https://i.imgur.com/aiv9azG.png)
+![The Main Idea](https://i.imgur.com/aiv9azG.png)
+![OneDimensional Mode](https://i.imgur.com/pkUwwQz.png)
+![Quantum Menu & Frequency Response at the bottom](https://i.imgur.com/OxJyXSn.png)
+![Menu](https://i.imgur.com/2OKhSzj.png)
+![Logo at the middle of Creation](https://i.imgur.com/mKfkB3U.png)
+
+
 
 This is an image using an absolute URL:
 
