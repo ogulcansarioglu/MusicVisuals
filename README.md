@@ -104,8 +104,7 @@ This is an image using an absolute URL:
 
 This is a youtube video of the demo: 
 
-[![YouTube]](https://youtu.be/8uoKCN-It0M)
-
+[![Ogulcan Sarioglu Music Video Link](https://img.youtube.com/vi/8uoKCN-It0M/0.jpg)](https://youtu.be/8uoKCN-It0M)
 This is a table:
 
 | Heading 1 | Heading 2 |
