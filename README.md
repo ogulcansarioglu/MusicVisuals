@@ -22,7 +22,7 @@ It works by drawing a 3D landscape using a noise function of processing. This la
 contuniously. The landscape has three mods, Quantum, Solid (default one) and One Dimensional which can be switched by pressing on the said buttons anytime which is
 also highlighted on the menu. Menu is a basic JFrame implementation that works as well with the visuals.
 
-Then slowly, as the song progress, the logo of the BTHM appears, created by the circles (bubbles) with a direct line at the end that I added accidently, but then
+Then slowly, as the song progress, the logo of the BMTH appears, created by the circles (bubbles) with a direct line at the end that I added accidently, but then
 liked it and leave it because it gives logo a place and a gravity on the screen. 
 
 # What I am most proud of in the assignment:
