@@ -34,9 +34,11 @@ into the disturbance in the virtual world's literal physical fabric. Being able 
 Secondly, even though I am not "visulazer" or visual learner and my visual imagination is fairly limited and I prefer writing and music, I was glad that I
 put something that is visually pleasing and also makes sense in the visual context, using the story-telling methods that I use. 
 
-Thirdly, I research a lot about java and processing libraries and learnt how to use JFrame and action listeners, being able to use them with processing was a great addition to my skill set.
+Thirdly, I research a lot about java and processing libraries and learnt how to use JFrame and action listeners, being able to use them with processing was a great addition to my skill set. Also I discovered the word of processing in depth with many hours spend researching to bring the concepts in my mind into life, and I learnt a lot about processing and felt empowered, as I said, that I gained the confidence that I can make my ideas come into life with coding. 
 
-# Markdown Tutorial
+
+
+
 
 
 # Headings
@@ -82,5 +84,9 @@ Images showing the main stages and functionalities of the program:
 This is a youtube video of the demo: 
 
 [![Ogulcan Sarioglu Music Video Link](https://img.youtube.com/vi/8uoKCN-It0M/0.jpg)](https://youtu.be/8uoKCN-It0M)
+
+# References
+
+Inspirated by CodingTrain regarding processing and Oracle Documents for JFrame and other java related self-research. 
 
 
