@@ -96,7 +96,7 @@ public void render()
 
 This is an image using a relative URL:
 
-![An image](https://imgur.com/aiv9azG)
+![An image](imgur.com/aiv9azG)
 
 This is an image using an absolute URL:
 
