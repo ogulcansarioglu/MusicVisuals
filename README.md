@@ -102,9 +102,9 @@ This is an image using an absolute URL:
 
 ![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
 
-This is a youtube video:
+This is a youtube video of the demo: 
 
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
+[![YouTube]](https://youtu.be/8uoKCN-It0M)
 
 This is a table:
 
