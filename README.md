@@ -6,6 +6,8 @@ Student Number: d20123805
 
 # Description of the assignment
 
+This is The Pocket Universe Generator that generates virtual worlds in three-level, Quantum, OneDimension, and Solid (Our World) by the music that is feeded into it. 
+
 # Instructions
 
 1) After starting the project, select "Start" from the menu. 
