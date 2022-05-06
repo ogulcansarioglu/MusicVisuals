@@ -25,7 +25,9 @@ public class Main
   
       
        
+
         while(myUserInterface.getClicks() != 1) 
+
         {
           
          System.out.println(myUserInterface.getClicks());

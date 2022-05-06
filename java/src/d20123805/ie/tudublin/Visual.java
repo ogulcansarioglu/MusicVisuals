@@ -29,8 +29,10 @@ public class Visual extends PApplet {
 /**
    *
    */
+
 private static final String LUDENS_MP3 = "C:/Users/Olci/Desktop/MusicVisuals/java/src/d20123805/ie/tudublin/Ludens.mp3";
 private static final String BMTH_LOGO = "C:/Users/Olci/Desktop/MusicVisuals/java/src/d20123805/ie/tudublin/bmth.png";
+
 private static  int SOLID = 10;
 private static final int WAVE = 5;
 private static final int QUANTUM = 3;
@@ -89,7 +91,9 @@ public void setup(){
     //logo, image processing setup
 
     places = new ArrayList<PVector>();
+
     img = loadImage(BMTH_LOGO);
+
     img.loadPixels();
 
     for (int x = 0; x < img.width; x++) {
