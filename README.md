@@ -34,24 +34,10 @@ into the disturbance in the virtual world's literal physical fabric. Being able 
 Secondly, even though I am not "visulazer" or visual learner and my visual imagination is fairly limited and I prefer writing and music, I was glad that I
 put something that is visually pleasing and also makes sense in the visual context, using the story-telling methods that I use. 
 
-Thirdly, I bring together my java education (JFrame libaries) and action listeners with processing knowladge together when I am creating this project which was a great 
-task. 
+Thirdly, I research a lot about java and processing libraries and learnt how to use JFrame and action listeners, being able to use them with processing was a great addition to my skill set.
 
 # Markdown Tutorial
 
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
 
 # Headings
 ## Headings
@@ -92,11 +78,6 @@ Images showing the main stages and functionalities of the program:
 ![Menu](https://i.imgur.com/2OKhSzj.png)
 ![Logo at the middle of Creation](https://i.imgur.com/mKfkB3U.png)
 
-
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
 
 This is a youtube video of the demo: 
 
