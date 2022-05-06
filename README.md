@@ -4,13 +4,6 @@ Name: Ogulcan Sarioglu
 
 Student Number: d20123805
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
-
 # Description of the assignment
 
 # Instructions
@@ -30,9 +23,6 @@ also highlighted on the menu. Menu is a basic JFrame implementation that works a
 
 Then slowly, as the song progress, the logo of the BTHM appears, created by the circles (bubbles) with a direct line at the end that I added accidently, but then
 liked it and leave it because it gives logo a place and a gravity on the screen. 
-
-
-
 
 # What I am most proud of in the assignment:
 
@@ -94,7 +84,7 @@ public void render()
 }
 ```
 
-This is an image using a relative URL:
+Images showing the main stages and functionalities of the program:
 
 ![The Main Idea](https://i.imgur.com/aiv9azG.png)
 ![OneDimensional Mode](https://i.imgur.com/pkUwwQz.png)
@@ -111,12 +101,5 @@ This is an image using an absolute URL:
 This is a youtube video of the demo: 
 
 [![Ogulcan Sarioglu Music Video Link](https://img.youtube.com/vi/8uoKCN-It0M/0.jpg)](https://youtu.be/8uoKCN-It0M)
-This is a table:
 
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
